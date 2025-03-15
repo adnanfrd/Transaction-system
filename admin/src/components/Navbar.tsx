@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Navbar: FC = () => {
   return (
-    <nav className="bg-white shadow-md px-6 py-3 flex justify-between items-center w-full">
+    <nav className="bg-white shadow-md px-6 py-3 flex justify-between items-center w-full border-b-2 border-blue-300">
       <div className="flex items-center gap-2">
         <Image src="/logo.png" alt="Logo" width={40} height={40} />
         <span className="text-lg font-semibold text-gray-800">TentLoom</span>
