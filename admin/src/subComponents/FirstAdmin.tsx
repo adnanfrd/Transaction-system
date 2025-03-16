@@ -23,7 +23,7 @@ const FirstAdmin = () => {
             owner: "Jim Neal",
             properties: 2,
             subscription: "$100.00",
-            link: "/apartments/jelly",
+            link: "/apartments",
           },
           {
             name: "Lift Apartments LLC",
