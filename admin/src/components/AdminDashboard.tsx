@@ -34,9 +34,11 @@ const AdminDashboard: FC = () => {
         <h1 className="text-lg font-semibold text-gray-800">Super Admin</h1>
         <span className="text-gray-500">— {currentDate}</span>
         <div className="flex gap-2">
+        <Link href="/payment-overview">
           <button className="border cursor-pointer border-gray-300 text-gray-700 px-4 py-2 rounded-full text-sm hover:bg-gray-100">
-            <Link href="/payment-overview">Payment overview</Link>
+            Payment overview
           </button>
+          </Link>
           <button className="border border-gray-300 text-gray-700 px-4 py-2 rounded-full text-sm hover:bg-gray-100">
             <Link href="/chat">Chats</Link>
           </button>

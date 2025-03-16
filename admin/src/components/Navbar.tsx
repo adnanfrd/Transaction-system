@@ -3,14 +3,17 @@
 import { FC } from 'react';
 import { Settings, Bell } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Navbar: FC = () => {
   return (
     <nav className="bg-white shadow-md px-6 py-3 flex justify-between items-center w-full border-b-2 border-blue-300">
+      <Link href="/">
       <div className="flex items-center gap-2">
         <Image src="/logo.png" alt="Logo" width={40} height={40} />
         <span className="text-lg font-semibold text-gray-800">TentLoom</span>
       </div>
+      </Link>
       
       <div className="flex items-center gap-4">
         <button className="p-2 rounded-full bg-blue-300 hover:bg-blue-400">
