@@ -33,9 +33,9 @@ const SupportAdmin: FC = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {supportItems.map((item, index) => (
-          <div key={index} className="bg-cream border rounded-lg shadow-sm p-6 flex justify-center items-center">
+          <div key={index} className="bg-cream border rounded-lg shadow-sm p-6 flex justify-center  items-center">
             <Link href={item.link}>
-              <button className="bg-blue-500 text-white hover:bg-blue-600 px-4 py-2 rounded-full text-sm font-medium">
+              <button className="bg-blue-500 cursor-pointer text-white hover:bg-blue-600 px-4 py-2 rounded-full text-sm font-medium">
                 {item.name}
               </button>
             </Link>

@@ -4,7 +4,6 @@ import { Search } from "lucide-react";
 const Chat = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col p-6">
-      {/* Top Navigation */}
       <div className="flex justify-between items-center w-full max-w-5xl mx-auto mb-4">
         <Link
           href="/"
@@ -17,9 +16,7 @@ const Chat = () => {
         </h1>
       </div>
 
-      {/* Chat Container */}
       <div className="flex flex-col lg:flex-row gap-6 w-full max-w-5xl mx-auto">
-        {/* Left Sidebar (Chat List) */}
         <div className="w-full lg:w-1/3 space-y-4">
           {[
             { name: "Trent Apartments", user: "Drew Neal", message: "Cool!" },
@@ -40,9 +37,7 @@ const Chat = () => {
           ))}
         </div>
 
-        {/* Right Chat Window */}
         <div className="w-full lg:w-2/3 bg-cream p-4 rounded-lg border border-blue-300 shadow-md">
-          {/* Chat Header */}
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
@@ -51,7 +46,6 @@ const Chat = () => {
             <Search className="w-5 h-5 text-gray-500" />
           </div>
 
-          {/* Chat Info */}
           <div className="mt-2 text-sm">
             <p>
               <strong>Apt#:</strong> <span className="text-gray-600">225</span>
@@ -62,12 +56,10 @@ const Chat = () => {
             </p>
           </div>
 
-          {/* View Description Button */}
           <button className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg text-sm mt-4 hover:bg-blue-600">
             View whole description
           </button>
 
-          {/* Chat Messages */}
           <div className="mt-4 space-y-2">
             {Array.from({ length: 6 }).map((_, index) => (
               <div
