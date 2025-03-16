@@ -1,7 +1,6 @@
 'use client';
 
-import { FC } from 'react';
-import { useState, useEffect } from 'react';
+import { FC, useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const AdminDashboard: FC = () => {
@@ -34,22 +33,27 @@ const AdminDashboard: FC = () => {
         <h1 className="text-lg font-semibold text-gray-800">Super Admin</h1>
         <span className="text-gray-500">— {currentDate}</span>
         <div className="flex gap-2">
-        <Link href="/payment-overview">
-          <button className="border cursor-pointer border-gray-300 text-gray-700 px-4 py-2 rounded-full text-sm hover:bg-gray-100">
-            Payment overview
-          </button>
+          <Link href="/payment-overview">
+            <button className="border border-gray-300 text-gray-700 px-4 py-2 rounded-full text-sm hover:bg-gray-100">
+              Payment overview
+            </button>
           </Link>
-          <button className="border border-gray-300 text-gray-700 px-4 py-2 rounded-full text-sm hover:bg-gray-100">
-            <Link href="/chat">Chats</Link>
-          </button>
+          <Link href="/chat">
+            <button className="border border-gray-300 text-gray-700 px-4 py-2 rounded-full text-sm hover:bg-gray-100">
+              Chats
+            </button>
+          </Link>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {items.map((item, index) => (
-          <div key={index} className="bg-cream  border rounded-lg shadow-sm p-6 flex justify-center items-center">
+          <div
+            key={index}
+            className="bg-cream border border-gray-300 rounded-xl shadow-lg p-8 flex justify-center items-center transition-transform transform hover:scale-105 hover:shadow-xl"
+          >
             <Link href={item.link}>
-              <button className="bg-blue-400 text-white px-4 py-2 rounded-full cursor-pointer text-sm font-medium">
+              <button className="bg-blue-400 text-white px-5 py-3 rounded-full cursor-pointer text-base font-medium shadow-md hover:bg-blue-500 transition">
                 {item.name}
               </button>
             </Link>
