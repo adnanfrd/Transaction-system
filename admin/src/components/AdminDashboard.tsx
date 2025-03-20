@@ -34,7 +34,7 @@ const AdminDashboard: FC = () => {
         <span className="text-gray-500">— {currentDate}</span>
         <div className="flex gap-2">
           <Link href="/payment-overview">
-            <button className="border border-gray-300 text-gray-700 px-4 py-2 rounded-full text-sm hover:bg-gray-100">
+            <button className="border cursor-pointer border-gray-300 text-gray-700 px-4 py-2 rounded-full text-sm hover:bg-gray-100">
               Payment overview
             </button>
           </Link>
