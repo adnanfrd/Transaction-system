@@ -2,12 +2,21 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const ConfirmationForm = () => {
   const [formData, setFormData] = useState({ fullName: "", activation: "" });
+  const router = useRouter(); // ✅ Correct use of router
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    // ✅ Ensure it navigates properly
+    router.push("/dashboard");
+  };
 
   return (
-    <div className="flex items-center justify-center h-[70vh] bg-gray-50 px-4">
+    <div className="flex items-center justify-center min-h-screen bg-gray-50 px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -18,7 +27,8 @@ const ConfirmationForm = () => {
           Please enter the confirmation details the owner provided you
         </h2>
 
-        <form className="mt-4 space-y-4">
+        <form onSubmit={handleSubmit} className="mt-4 space-y-4">
+          {/* Full Name Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700">Enter Full Name</label>
             <input
@@ -30,6 +40,7 @@ const ConfirmationForm = () => {
             />
           </div>
 
+          {/* Activation Number Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700">Activation Number</label>
             <input
@@ -41,10 +52,12 @@ const ConfirmationForm = () => {
             />
           </div>
 
+          {/* Validate Button */}
           <motion.button
+            type="submit" // ✅ This ensures form submission works properly
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="w-full mt-4 bg-blue-500 text-white px-6 py-3 rounded-full text-lg shadow-md hover:bg-blue-600 transition flex items-center justify-center space-x-2"
+            className="w-full mt-4 cursor-pointer bg-blue-500 text-white px-6 py-3 rounded-full text-lg shadow-md hover:bg-blue-600 transition flex items-center justify-center space-x-2"
           >
             <span>Validate</span>
             <span>→</span>
