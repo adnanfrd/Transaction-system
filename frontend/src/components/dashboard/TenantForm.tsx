@@ -37,7 +37,6 @@ const TenantForm = () => {
         animate={{ opacity: 1, scale: 1 }}
         className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-md border border-gray-200"
       >
-        {/* Form Fields */}
         <div className="space-y-4">
           {["Enter full name", "Driver license", "Apt #", "Employment Info"].map((label, index) => (
             <div key={index} className="relative">
@@ -51,7 +50,6 @@ const TenantForm = () => {
             </div>
           ))}
 
-          {/* Signature Input */}
           <div className="relative">
             <label className="block text-sm text-gray-700 mb-1">Signature</label>
             <div className="flex items-center border border-gray-300 rounded-lg px-4 py-2">
@@ -69,7 +67,6 @@ const TenantForm = () => {
             </div>
           </div>
 
-          {/* Rent Amount */}
           <div className="relative">
             <label className="block text-sm text-gray-700 mb-1">Rent Amount</label>
             <div className="flex items-center border border-gray-300 rounded-lg px-4 py-2">
