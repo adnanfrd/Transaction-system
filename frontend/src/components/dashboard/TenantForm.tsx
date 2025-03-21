@@ -80,7 +80,6 @@ const TenantForm = () => {
             </div>
           </div>
 
-          {/* Buttons */}
           <button className="w-full flex items-center justify-center border border-blue-500 text-blue-500 rounded-lg py-3">
             <FaPrint className="mr-2" /> Print
           </button>
