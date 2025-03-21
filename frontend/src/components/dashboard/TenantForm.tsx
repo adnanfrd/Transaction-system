@@ -83,7 +83,8 @@ const TenantForm = () => {
           <button className="w-full flex items-center justify-center border border-blue-500 text-blue-500 rounded-lg py-3">
             <FaPrint className="mr-2" /> Print
           </button>
-          <button className="w-full flex items-center justify-center border border-blue-500 text-blue-500 rounded-lg py-3">
+          <button
+           className="w-full flex items-center justify-center border border-blue-500 text-blue-500 rounded-lg py-3">
             <FaUpload className="mr-2" /> Upload documents
           </button>
           <button 

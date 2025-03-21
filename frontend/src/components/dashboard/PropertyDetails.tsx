@@ -64,7 +64,8 @@ const PropertyDetails = () => {
           <h3 className="text-lg font-semibold bg-blue-500 text-white rounded-full px-5 py-2 w-fit">
             City Apartments
           </h3>
-          <div className="mt-4 space-y-2">
+          <Link href="/tenantsdetails">
+          <div className="mt-4 space-y-2 cursor-pointer">
             <div className="flex justify-between text-lg">
               <span>Tenants:</span> <span className="font-semibold">10</span>
             </div>
@@ -80,6 +81,7 @@ const PropertyDetails = () => {
               <span>Monthly Amount:</span> <span>$900.00</span>
             </div>
           </div>
+          </Link>
           <Link href="/tenantform">
           <button
             ref={buttonRef}
@@ -89,18 +91,18 @@ const PropertyDetails = () => {
           </button>
           </Link>
         </motion.div>
-
+         <Link href="/tenantslist">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-white p-10 rounded-xl shadow-lg border border-gray-200"
+          className="bg-white p-10 rounded-xl shadow-lg border border-gray-200 cursor-pointer"
         >
           <h3 className="text-lg font-semibold bg-blue-500 text-white rounded-full px-5 py-2 w-fit">
             Tenants
           </h3>
-          <div className="mt-4 space-y-2">
+          <div className="mt-4 space-y-2 ">
             {tenants.map((tenant, index) => (
-              <div key={index} className="flex justify-between text-lg">
+              <div key={index} className="flex justify-between text-lg ">
                 <span>{tenant.name}</span>
                 <span className={`font-semibold ${tenant.color}`}>
                   {tenant.status}
@@ -109,6 +111,7 @@ const PropertyDetails = () => {
             ))}
           </div>
         </motion.div>
+        </Link>
       </div>
 
       <motion.div
