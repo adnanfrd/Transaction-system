@@ -80,12 +80,14 @@ const PropertyDetails = () => {
               <span>Monthly Amount:</span> <span>$900.00</span>
             </div>
           </div>
+          <Link href="/tenantform">
           <button
             ref={buttonRef}
-            className="mt-5 bg-blue-500 text-white px-5 py-3 rounded-full text-lg shadow-md hover:bg-blue-600 transition w-full"
+            className="mt-5 cursor-pointer bg-blue-500 text-white px-5 py-3 rounded-full text-lg shadow-md hover:bg-blue-600 transition w-full"
           >
             + Add new tenant
           </button>
+          </Link>
         </motion.div>
 
         <motion.div
