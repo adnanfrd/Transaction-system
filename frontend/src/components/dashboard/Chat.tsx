@@ -1,87 +1,71 @@
-'use client';
-
-import { useState } from "react";
-import { FiSend } from "react-icons/fi";
-import { IoArrowBack } from "react-icons/io5";
-import { FaSearch, FaEllipsisH } from "react-icons/fa";
-import Image from "next/image";
+import Link from "next/link";
+import { FaArrowLeft, FaPaperPlane } from "react-icons/fa";
 
 const Chat = () => {
-  const [messages, setMessages] = useState([
-    { text: "Lorem ipsum dolor sit.", sender: "other" },
-    { text: "Lorem ipsum dolor sit.", sender: "other" },
-    { text: "Lorem ipsum dolor sit.", sender: "me" },
-    { text: "Lorem ipsum dolor sit.", sender: "me" },
-  ]);
-  
-  const [message, setMessage] = useState("");
-
-  const sendMessage = () => {
-    if (message.trim() !== "") {
-      setMessages([...messages, { text: message, sender: "me" }]);
-      setMessage("");
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
       {/* Header */}
-      <div className="w-full max-w-2xl bg-white shadow-md rounded-lg p-4 flex items-center justify-between">
-        <button className="text-gray-600"><IoArrowBack size={24} /></button>
-        <h2 className="text-lg font-semibold text-gray-700">Chat — August 21, 2023</h2>
-        <div className="flex space-x-4">
-          <FaSearch className="text-gray-600 cursor-pointer" />
-          <FaEllipsisH className="text-gray-600 cursor-pointer" />
-        </div>
-      </div>
-
-      {/* Chat Section */}
-      <div className="w-full max-w-2xl bg-white shadow-md rounded-lg p-4 mt-4">
-        <div className="flex items-center space-x-4 border-b pb-4">
-          <Image
-            src="/profile.jpg"
-            alt="Profile Picture"
-            width={40}
-            height={40}
-            className="rounded-full"
-          />
-          <div>
-            <h3 className="text-gray-800 font-semibold">Trent Carie</h3>
-            <p className="text-gray-500 text-sm">Apt#: 225</p>
-          </div>
-          <div className="ml-auto text-gray-600 font-medium">Trent Apartments</div>
-        </div>
-        <button className="w-full mt-3 bg-blue-500 text-white py-2 rounded-lg text-sm">View whole description</button>
-      </div>
-
-      {/* Messages */}
-      <div className="w-full max-w-2xl flex flex-col space-y-2 my-4">
-        {messages.map((msg, index) => (
-          <div
-            key={index}
-            className={`max-w-[60%] px-4 py-2 rounded-lg text-white text-sm ${
-              msg.sender === "me"
-                ? "ml-auto bg-blue-500"
-                : "mr-auto bg-gray-500"
-            }`}
-          >
-            {msg.text}
-          </div>
-        ))}
-      </div>
-
-      {/* Message Input */}
-      <div className="w-full max-w-2xl flex items-center bg-white shadow-md rounded-lg p-2 mt-auto">
-        <input
-          type="text"
-          placeholder="Write a message..."
-          className="flex-1 p-2 outline-none text-gray-700"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <button onClick={sendMessage} className="text-blue-500 p-2">
-          <FiSend size={24} />
+      <div className="w-full max-w-4xl bg-white shadow-md rounded-lg p-4 flex items-center space-x-3">
+       <Link href="/dashboard">
+       <button className="p-2 cursor-pointer bg-gray-200 rounded-full">
+          <FaArrowLeft />
         </button>
+       </Link>
+        <h1 className="text-lg font-semibold flex-grow text-center">Chat — August 21, 2023</h1>
+      </div>
+      
+      {/* Chat Section */}
+      <div className="w-full max-w-4xl mt-4 flex gap-4">
+        {/* Sidebar */}
+        <div className="w-1/4 space-y-4">
+          {["Trent Apartments", "Jelly Apartments", "Lift Apartments"].map((item, index) => (
+            <div key={index} className="bg-white p-4 rounded-lg shadow-md">
+              <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                {item}
+              </span>
+              <p className="text-gray-500 text-sm mt-2">Trent Carie: <span className="text-black">Cool! 5:50PM</span></p>
+            </div>
+          ))}
+        </div>
+        
+        {/* Chat Area */}
+        <div className="flex-1 bg-white shadow-md rounded-lg p-4 flex flex-col">
+          {/* User Info */}
+          <div className="flex items-center justify-between bg-gray-50 p-4 rounded-md">
+            <div className="flex items-center space-x-3">
+              <img src="/logo.png" alt="User" className="w-10 h-10 rounded-full" />
+              <div>
+                <p className="font-medium">Trent Carie</p>
+                <p className="text-xs text-gray-500">Apt#: 225 | Property Name: Trent Apartments</p>
+              </div>
+            </div>
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-full">View whole description</button>
+          </div>
+
+          {/* Messages */}
+          <div className="flex flex-col space-y-3 p-4 overflow-y-auto max-h-96">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className={`self-${i % 2 === 0 ? "start" : "end"} bg-gray-300 text-sm px-4 py-2 rounded-lg max-w-xs`}
+              >
+                Lorem ipsum dolor sit 5:50PM
+              </div>
+            ))}
+          </div>
+
+          {/* Input Box */}
+          <div className="mt-auto flex items-center bg-gray-200 p-3 rounded-lg">
+            <input
+              type="text"
+              placeholder="Write a message..."
+              className="flex-1 p-2 rounded-md outline-none bg-white"
+            />
+            <button className="bg-blue-500 text-white p-2 rounded-full ml-2">
+              <FaPaperPlane />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
