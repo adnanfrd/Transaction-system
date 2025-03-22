@@ -2,10 +2,10 @@ import { FaArrowLeft } from "react-icons/fa";
 import Image from "next/image";
 
 const settingsOptions = [
-  { title: "Personal Settings", imgSrc: "/personal-settings.png" },
-  { title: "Payment Methods", imgSrc: "/payment-methods.png" },
-  { title: "Security & Privacy", imgSrc: "/security-privacy.png" },
-  { title: "Payment History", imgSrc: "/payment-history.png" },
+  { title: "Personal Settings", imgSrc: "/personel.jpeg" },
+  { title: "Payment Methods", imgSrc: "/payment.png" },
+  { title: "Security & Privacy", imgSrc: "/security.png" },
+  { title: "Payment History", imgSrc: "/historyp.jpeg" },
 ];
 
 export default function SettingsPage() {
