@@ -87,9 +87,9 @@ const Signup = () => {
               <input type="checkbox" className="w-4 h-4" />
               <span className="text-sm">
                 I accept{" "}
-                <a href="#" className="text-blue-500 underline">
+                <Link href="/termsandprivacy" className="text-blue-500 underline">
                   Terms of Use & Privacy Policy
-                </a>
+                </Link>
               </span>
             </div>
              
