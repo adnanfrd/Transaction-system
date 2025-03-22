@@ -7,7 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import Link from "next/link";
 
-const Signup = () => {
+const Login = () => {
   const buttonRef = useRef(null);
 
   useEffect(() => {
@@ -31,25 +31,25 @@ const Signup = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex flex-col items-center justify-center min-h-screen sm:min-h-[130vh] px-4 py-10 bg-gray-50"
+      className="flex flex-col items-center justify-center min-h-screen px-4 py-10 bg-gray-50"
     >
-      <div className="w-full max-w-sm sm:max-w-md space-y-6 flex flex-col items-center">
-        <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 w-full">
+      <div className="w-full max-w-sm space-y-6 flex flex-col items-center">
+        <div className="flex flex-col justify-center sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 w-full">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center justify-center space-x-2 w-full sm:w-auto border px-6 py-2 rounded-full shadow-md hover:bg-gray-100 transition"
+            className="flex items-center justify-center space-x-3 w-full border px-8 py-3 rounded-full shadow-md hover:bg-gray-100 transition whitespace-nowrap"
           >
-            <FcGoogle className="text-xl" />
-            <span className="text-sm sm:text-base">Login with Google</span>
+            <FcGoogle className="text-2xl" />
+            <span className="text-base">Login with Google</span>
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center justify-center space-x-2 w-full sm:w-auto border px-6 py-2 rounded-full shadow-md hover:bg-gray-100 transition"
+            className="flex items-center justify-center space-x-3 w-full border px-8 py-3 rounded-full shadow-md hover:bg-gray-100 transition whitespace-nowrap"
           >
-            <FaFacebook className="text-blue-600 text-xl" />
-            <span className="text-sm sm:text-base">Login with Facebook</span>
+            <FaFacebook className="text-blue-600 text-2xl" />
+            <span className="text-base">Login with Facebook</span>
           </motion.button>
         </div>
 
@@ -67,11 +67,8 @@ const Signup = () => {
         >
           <form className="space-y-4">
             {[
-              { label: "Full Name", type: "text", placeholder: "Your full name" },
               { label: "Email", type: "email", placeholder: "Email" },
-              { label: "Username", type: "text", placeholder: "Username" },
               { label: "Password", type: "password", placeholder: "Password" },
-              { label: "Confirm Password", type: "password", placeholder: "Confirm password" },
             ].map(({ label, type, placeholder }, index) => (
               <div key={index}>
                 <label className="block text-sm font-medium">{label}</label>
@@ -83,34 +80,34 @@ const Signup = () => {
               </div>
             ))}
 
-            <div className="flex items-center space-x-2">
-              <input type="checkbox" className="w-4 h-4" />
-              <span className="text-sm">
-                I accept{" "}
-                <a href="#" className="text-blue-500 underline">
-                  Terms of Use & Privacy Policy
-                </a>
-              </span>
+            <div className="flex justify-between items-center text-sm">
+              <div className="flex items-center space-x-2">
+                <input type="checkbox" className="w-4 h-4" />
+                <span>Remember me</span>
+              </div>
+              <Link href="#" className="text-blue-500 hover:underline">
+                Forgot Password?
+              </Link>
             </div>
-             
-             <Link href="/confirmation" >
-            <motion.button
-              ref={buttonRef}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full mt-4 cursor-pointer bg-blue-500 text-white px-6 py-3 rounded-full text-lg shadow-md hover:bg-blue-600 transition flex items-center justify-center space-x-2"
-            >
-              <span>Sign Up</span>
-              <span>→</span>
-            </motion.button>
+
+            <Link href="/dashboard">
+              <motion.button
+                ref={buttonRef}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full mt-4 cursor-pointer bg-blue-500 text-white px-8 py-3 rounded-full text-lg shadow-md hover:bg-blue-600 transition flex items-center justify-center space-x-3"
+              >
+                <span>Login</span>
+                <span>→</span>
+              </motion.button>
             </Link>
           </form>
         </motion.div>
 
         <p className="text-sm text-gray-600">
-          Already have an account?{" "}
-          <Link href="/login" className="text-blue-500 hover:underline">
-            Login
+          Don't have an account?{" "}
+          <Link href="/signup" className="text-blue-500 hover:underline">
+            Sign Up
           </Link>
         </p>
       </div>
@@ -118,4 +115,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

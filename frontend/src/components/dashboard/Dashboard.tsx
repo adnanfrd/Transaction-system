@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const properties = [
   { name: "Jelly Apartments", tenants: 30, paid: 17, unpaid: 13, amount: 2000, link: "/propertydetails" },
-  { name: "Lift Apartments", tenants: 10, paid: 7, unpaid: 3, amount: 800, link: "/tpropertydetails" },
+  { name: "Lift Apartments", tenants: 10, paid: 7, unpaid: 3, amount: 800, link: "/propertydetails" },
   { name: "City Apartments", tenants: 5, paid: 2, unpaid: 3, amount: 1000, link: "/propertydetails" },
   { name: "Trent Apartments", tenants: 50, paid: 25, unpaid: 25, amount: 2000, link: "/propertydetails" },
 ];
@@ -33,8 +34,8 @@ const Dashboard = () => {
           Properties — <span className="text-gray-600">August 21, 2023</span>
         </h2>
         <div className="flex space-x-3 sm:space-x-4 mt-4 sm:mt-0">
-          <button className="px-4 sm:px-5 py-2 sm:py-3 border rounded-full hover:bg-gray-200 transition">Payment Overview</button>
-          <button className="px-4 sm:px-5 py-2 sm:py-3 border rounded-full hover:bg-gray-200 transition">Chats</button>
+          <Link href="/paymentoverview"><button className="cursor-pointer px-4 sm:px-5 py-2 sm:py-3 border rounded-full hover:bg-gray-200 transition">Payment Overview</button></Link>
+          <Link href="/chat"><button className="cursor-pointer px-4 sm:px-5 py-2 sm:py-3 border rounded-full hover:bg-gray-200 transition">Chats</button></Link>
         </div>
       </div>
 

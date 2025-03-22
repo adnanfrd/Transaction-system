@@ -1,10 +1,10 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { IoMdArrowBack } from "react-icons/io";
 import { FaRegFileAlt } from "react-icons/fa";
+import { LuCirclePlus } from "react-icons/lu";
 import Link from "next/link";
 
 const tenants = [
@@ -39,7 +39,7 @@ const TenantDashboard = () => {
           Jelly Apartments <span className="text-gray-500">— August 21, 2023</span>
         </h2>
       </div>
-      
+       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ const TenantDashboard = () => {
             <div className="bg-blue-500 text-white text-sm font-semibold px-4 py-1 rounded-full w-max">
               Tenant
             </div>
-
+            <Link href="/tenantaccountdetils">
             <div className="mt-3 space-y-1 text-gray-700">
               <p className="flex justify-between">
                 <span className="font-semibold">Name:</span>
@@ -91,9 +91,14 @@ const TenantDashboard = () => {
               </p>
               <p className="flex items-center justify-between">
                 <span className="font-semibold">Contract:</span>
-                <FaRegFileAlt className="ml-2 text-gray-500" />
+               <div className="flex font-bold gap-4">
+              
+               <Link href="/contractdetails"><FaRegFileAlt className="ml-2 text-gray-500" /></Link>
+               <LuCirclePlus />
+               </div>
               </p>
             </div>
+            </Link>
 
             <div className="mt-4 flex flex-wrap gap-2">
               {tenant.status === "Unpaid" && (
@@ -107,6 +112,8 @@ const TenantDashboard = () => {
             </div>
           </motion.div>
         ))}
+            
+
       </motion.div>
     </div>
   );

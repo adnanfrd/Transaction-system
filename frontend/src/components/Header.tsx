@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import gsap from "gsap";
+import Link from "next/link";
 
 const Header = () => {
   const buttonRef = useRef(null);
@@ -31,6 +32,7 @@ const Header = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="flex justify-between items-center px-6 py-3 border-b"
     >
+      <Link href="/">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -40,7 +42,9 @@ const Header = () => {
         <Image src="/logo.png" alt="Logo" width={30} height={30} />
         <span className="font-semibold text-lg">TentLoom</span>
       </motion.div>
+      </Link>
 
+      <Link href="/login">
       <motion.button
         ref={buttonRef}
         whileHover={{ scale: 1.1 }}
@@ -49,6 +53,7 @@ const Header = () => {
       >
         Log In
       </motion.button>
+      </Link>
     </motion.header>
   );
 };

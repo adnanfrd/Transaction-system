@@ -128,9 +128,9 @@ const PropertyDetails = () => {
               key={index}
               className="flex justify-between text-lg items-center"
             >
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4 cursor-pointer">
                 <span>{contract.name}</span>
-                <MdOutlinePayment className="text-gray-600" />
+                <Link href="/paymenthistory"><MdOutlinePayment className="text-gray-600" /></Link>
               </div>
               <span className="flex items-center space-x-4 ">
                 {contract.years} <FaFileAlt className="text-gray-600" />
