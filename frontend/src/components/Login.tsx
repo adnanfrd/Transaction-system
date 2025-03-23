@@ -105,7 +105,7 @@ const Login = () => {
         </motion.div>
 
         <p className="text-sm text-gray-600">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link href="/signup" className="text-blue-500 hover:underline">
             Sign Up
           </Link>
