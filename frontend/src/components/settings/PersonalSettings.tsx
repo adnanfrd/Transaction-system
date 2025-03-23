@@ -32,7 +32,7 @@ export default function PersonalSettings() {
           <div className="p-6 bg-white shadow-md rounded-lg">
             <h2 className="font-semibold text-lg text-blue-600">Personal Info</h2>
             <p className="text-gray-600 text-sm mt-1">
-              Only you can see these details. We'll use this info to help verify your identity.
+              Only you can see these details. We&apos;ll use this info to help verify your identity.
             </p>
 
             {/* Input Fields */}
