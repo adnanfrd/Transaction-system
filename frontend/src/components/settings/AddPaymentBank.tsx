@@ -19,7 +19,7 @@ export default function AddPaymentBank() {
   return (
     <div className="min-h-screen bg-[#FCFBF7] px-6 py-10 flex flex-col items-center">
       <div className="w-full max-w-lg">
-        <Link href="/payment-method" className="flex items-center space-x-2 text-gray-600 hover:text-black">
+        <Link href="/settings" className="flex items-center space-x-2 text-gray-600 hover:text-black">
           <FaArrowLeft />
           <span>Back</span>
         </Link>
