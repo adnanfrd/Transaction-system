@@ -75,14 +75,16 @@ const Dashboard = () => {
         ))}
       </div>
 
+      <Link href="/addapartment">
       <motion.button
         ref={buttonRef}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="mt-6 sm:mt-8 bg-blue-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg sm:text-xl shadow-md hover:bg-blue-600 transition w-full sm:w-auto block mx-auto"
+        className="mt-6 sm:mt-8 cursor-pointer bg-blue-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-lg sm:text-xl shadow-md hover:bg-blue-600 transition w-full sm:w-auto block mx-auto"
       >
         + Add New Apartment
       </motion.button>
+      </Link>
     </div>
   );
 };
