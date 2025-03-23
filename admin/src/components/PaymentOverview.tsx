@@ -28,7 +28,7 @@ const PaymentOverview = () => {
       <div className="flex gap-8">
       <Link href="/payment-overview/property-payments"> 
         <button className="bg-blue-500 text-white cursor-pointer px-10 py-6 rounded-lg text-lg shadow-md hover:bg-blue-600">
-         Property's Payments
+         Property&apos;s Payments
         </button>
         </Link>
        <Link href="/payment-overview/tenants-payments">

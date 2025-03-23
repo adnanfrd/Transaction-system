@@ -34,7 +34,7 @@ const GenerateLease = () => {
         <p className="text-gray-800 text-lg mb-6">
           The Tenant agrees to maintain the property in good condition and abide
           by community rules. Subletting is not permitted without the
-          Landlord's written consent.
+          Landlord&apos;s written consent.
         </p>
 
         <blockquote className="border-l-4 border-gray-600 pl-5 italic text-gray-800 text-lg mb-6">
