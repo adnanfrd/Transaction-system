@@ -15,7 +15,6 @@ const AddApartment = () => {
     monthlyAmount: "",
   });
 
-  // ✅ Fix: Use useEffect instead of useState for GSAP animations
   useEffect(() => {
     gsap.from(".form-container", {
       opacity: 0,
@@ -23,7 +22,7 @@ const AddApartment = () => {
       duration: 1,
       ease: "power3.out",
     });
-  }, []); // Run only once on mount
+  }, []); 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -37,7 +36,6 @@ const AddApartment = () => {
 
   return (
     <motion.div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg mt-10 form-container">
-      {/* ✅ Fix: Remove unnecessary <Link> around the button */}
       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="mb-4">
         <button type="button" onClick={() => router.back()} className="bg-gray-500 text-white py-2 px-4 rounded-lg">
           Back
