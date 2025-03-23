@@ -33,7 +33,7 @@ const PaymentOverview = () => {
         </Link>
        <Link href="/payment-overview/tenants-payments">
        <button className="bg-blue-500 cursor-pointer text-white px-10 py-6 rounded-lg text-lg shadow-md hover:bg-blue-600">
-          Tenant's Payments
+          Tenant&apos;s Payments
         </button>
        </Link>
       </div>

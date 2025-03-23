@@ -13,7 +13,7 @@ const GenerateLease = () => {
       </div>
 
       <h1 className="text-2xl font-bold text-center mb-6">
-        Terry Meez <span className="text-gray-500 text-lg">— August 21, 2023</span>
+        Terry Meez <span className="text-gray-500 text-lg">&mdash; August 21, 2023</span>
       </h1>
 
       <div className="bg-[#FCF8E3] p-10 rounded-2xl shadow-xl border border-gray-400 max-w-5xl w-full">
@@ -38,8 +38,8 @@ const GenerateLease = () => {
         </p>
 
         <blockquote className="border-l-4 border-gray-600 pl-5 italic text-gray-800 text-lg mb-6">
-          "The Tenant shall ensure timely rent payments and comply with all
-          property regulations."
+          &ldquo;The Tenant shall ensure timely rent payments and comply with all
+          property regulations.&rdquo;
         </blockquote>
 
         <p className="text-gray-800 text-lg">
