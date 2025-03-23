@@ -29,7 +29,7 @@ const Header = () => {
     }
   }, []);
 
-  if (pathname === "/confirmation" || pathname === "/") return null;
+  if (pathname === "/detailsconfirmation" || pathname === "/") return null;
 
   return (
     <motion.header

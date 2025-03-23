@@ -5,14 +5,22 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const ConfirmationForm = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({ fullName: "", activation: "" });
-  const router = useRouter(); // ✅ Correct use of router
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); // Prevent default form submission behavior
+  const handleValidate = async () => {
+    if (!formData.fullName.trim() || !formData.activation.trim()) {
+      setError("Please fill in all fields.");
+      return;
+    }
 
-    // ✅ Ensure it navigates properly
-    router.push("/dashboard");
+    setError(""); // Clear error if validation passes
+
+    // Adding a slight delay to ensure state updates before navigation
+    await new Promise((resolve) => setTimeout(resolve, 100));
+
+    router.push("/dashboard"); // Navigate programmatically
   };
 
   return (
@@ -27,8 +35,7 @@ const ConfirmationForm = () => {
           Please enter the confirmation details the owner provided you
         </h2>
 
-        <form onSubmit={handleSubmit} className="mt-4 space-y-4">
-          {/* Full Name Field */}
+        <div className="mt-4 space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">Enter Full Name</label>
             <input
@@ -40,7 +47,6 @@ const ConfirmationForm = () => {
             />
           </div>
 
-          {/* Activation Number Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700">Activation Number</label>
             <input
@@ -52,17 +58,17 @@ const ConfirmationForm = () => {
             />
           </div>
 
-          {/* Validate Button */}
+          {error && <p className="text-red-500 text-sm">{error}</p>}
+
           <motion.button
-            type="submit" // ✅ This ensures form submission works properly
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={handleValidate}
             className="w-full mt-4 cursor-pointer bg-blue-500 text-white px-6 py-3 rounded-full text-lg shadow-md hover:bg-blue-600 transition flex items-center justify-center space-x-2"
           >
-            <span>Validate</span>
-            <span>→</span>
+            Validate →
           </motion.button>
-        </form>
+        </div>
       </motion.div>
     </div>
   );

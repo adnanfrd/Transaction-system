@@ -93,7 +93,7 @@ const Signup = () => {
               </span>
             </div>
              
-             <Link href="/confirmation" >
+             <Link href="/detailsconfirmation" >
             <motion.button
               ref={buttonRef}
               whileHover={{ scale: 1.1 }}
